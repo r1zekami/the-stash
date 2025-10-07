@@ -28,7 +28,7 @@ webBasePath: /bababababa/
 Access URL: https://xx.xx.xx.xx:22222/bababababa/
 ```
 
-Now it's time to setup your self-signed certs. You can use this [script](https://github.com/Roguelied/3x-ui-with-self-signed-certs-setup-guide/blob/main/create-self-signed-certs.sh) - it will create keys for you in `/etc/ssl/self_signed_cert/` directory.
+Now it's time to setup your self-signed certs. You can use this [script](https://github.com/Roguelied/the-stash/blob/main/3x-ui-vpn-guide/create-self-signed-certs.sh) - it will create keys for you in `/etc/ssl/self_signed_cert/` directory.
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/Roguelied/3x-ui-with-self-signed-certs-setup-guide/refs/heads/main/create-self-signed-certs.sh)
 ```
