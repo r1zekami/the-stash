@@ -30,7 +30,7 @@ Access URL: https://xx.xx.xx.xx:22222/bababababa/
 
 Now it's time to setup your self-signed certs. You can use this [script](https://github.com/Roguelied/the-stash/blob/main/3x-ui-vpn-guide/create-self-signed-certs.sh) - it will create keys for you in `/etc/ssl/self_signed_cert/` directory.
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/Roguelied/3x-ui-with-self-signed-certs-setup-guide/refs/heads/main/create-self-signed-certs.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/r1zekami/the-stash/refs/heads/main/3x-ui-vpn-guide/create-self-signed-certs.sh)
 ```
 
 When script is finish the work for certs, copy the filepaths and go to Web Panel.
