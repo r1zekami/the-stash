@@ -16,6 +16,10 @@ sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo systemctl start docker
 sudo systemctl enable docker
+
+usermod -aG docker $USER #add current user to docker group to resolve permissions error
+newgrp docker #refresh session
+
 echo "======================CHECK ME======================"
 docker --version
 docker compose version
