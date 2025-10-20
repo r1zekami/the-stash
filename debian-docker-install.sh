@@ -17,7 +17,7 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 sudo systemctl start docker
 sudo systemctl enable docker
 
-usermod -aG docker $USER #add current user to docker group to resolve permissions error
+sudo usermod -aG docker $USER #add current user to docker group to resolve permissions error
 newgrp docker #refresh session
 
 echo "======================CHECK ME======================"
