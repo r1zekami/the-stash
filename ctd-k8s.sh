@@ -59,8 +59,10 @@ sudo apt-get install -y kubelet kubeadm kubectl
 
 sudo systemctl enable kubelet
 
+sudo mkdir -p /opt/cni/bin
 sudo mkdir -p /usr/lib/cni
-curl -L https://github.com/containernetworking/plugins/releases/download/v1.4.0/cni-plugins-linux-amd64-v1.4.0.tgz | sudo tar -C /usr/lib/cni -xz
+curl -L https://github.com/containernetworking/plugins/releases/download/v1.7.1/cni-plugins-linux-amd64-v1.7.1.tgz | sudo tar -C /opt/cni/bin -xz
+sudo mv /opt/cni/bin/* /usr/lib/cni/
 
 #sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --image-repository=registry.aliyuncs.com/google_containers --v=3
 #kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
