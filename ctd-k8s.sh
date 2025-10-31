@@ -47,6 +47,7 @@ sudo chmod 644 /etc/apt/sources.list.d/kubernetes.list
 sudo apt install -y ufw
 sudo ufw allow 6443/tcp         #kubeapiserver
 sudo ufw allow 2379:2380/tcp    #etcd
+sudo ufw allow 2380/tcp
 sudo ufw allow 10250:10252/tcp  #kubelet
 sudo ufw allow 10255/tcp        #ro kubelet
 sudo ufw allow 10257/tcp        #controller-manager ?
@@ -62,7 +63,7 @@ sudo systemctl enable kubelet
 sudo mkdir -p /opt/cni/bin
 sudo mkdir -p /usr/lib/cni
 curl -L https://github.com/containernetworking/plugins/releases/download/v1.7.1/cni-plugins-linux-amd64-v1.7.1.tgz | sudo tar -C /opt/cni/bin -xz
-sudo mv /opt/cni/bin/* /usr/lib/cni/
+sudo cp /opt/cni/bin/* /usr/lib/cni/
 
 #sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --image-repository=registry.aliyuncs.com/google_containers --v=3
 #kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
