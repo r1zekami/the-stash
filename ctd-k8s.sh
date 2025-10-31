@@ -28,6 +28,7 @@ containerd config default | sudo tee /etc/containerd/config.toml
 sudo sed -i \
   -e 's/SystemdCgroup = false/SystemdCgroup = true/' \
   -e 's|sandbox_image = ".*"|sandbox_image = "registry.k8s.io/pause:3.10.1"|' \
+  -e 's#/usr/lib/cni#/opt/cni/bin#g' \
   /etc/containerd/config.toml
 
 sudo systemctl restart containerd
