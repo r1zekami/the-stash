@@ -33,7 +33,7 @@ sudo sed -i \
 
 sudo systemctl restart containerd
 
-#k8s control plane init
+#k8s worker node setup
 
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl gnupg
@@ -46,13 +46,9 @@ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 sudo chmod 644 /etc/apt/sources.list.d/kubernetes.list
 
 sudo apt install -y ufw
-sudo ufw allow 6443/tcp         #kubeapiserver
-sudo ufw allow 2379:2380/tcp    #etcd
-sudo ufw allow 2380/tcp
-sudo ufw allow 10250:10252/tcp  #kubelet
+sudo ufw allow 10250/tcp        #kubelet
 sudo ufw allow 10255/tcp        #ro kubelet
-sudo ufw allow 10257/tcp        #controller-manager ?
-sudo ufw allow 10259/tcp        #scheduler ?
+sudo ufw allow 30000:32767/tcp  #NodePort services
 sudo ufw allow 4789/udp         #VXLAN (Flannel)
 sudo ufw enable
 
