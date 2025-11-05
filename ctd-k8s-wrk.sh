@@ -2,6 +2,7 @@
 #containerd setup
 sudo apt-get update && sudo apt-get install curl
 swapoff -a
+sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
 cat > /etc/modules-load.d/k8s.conf << EOF
 overlay
@@ -53,7 +54,7 @@ sudo ufw allow 4789/udp         #VXLAN (Flannel)
 sudo ufw enable
 
 sudo apt-get update
-sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-get install -y kubelet
 
 sudo systemctl enable kubelet
 
