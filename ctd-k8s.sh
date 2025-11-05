@@ -1,6 +1,5 @@
 #!/bin/bash
 #containerd setup
-sudo apt-get update && sudo apt-get install curl
 swapoff -a
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
