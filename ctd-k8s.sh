@@ -54,7 +54,7 @@ sudo ufw allow 10255/tcp        #ro kubelet
 sudo ufw allow 10257/tcp        #controller-manager ?
 sudo ufw allow 10259/tcp        #scheduler ?
 sudo ufw allow 4789/udp         #VXLAN (Flannel)
-sudo ufw enable
+sudo ufw allow 22/tcp
 
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
@@ -64,3 +64,4 @@ sudo systemctl enable kubelet
 
 sudo mkdir -p /opt/cni/bin
 curl -L https://github.com/containernetworking/plugins/releases/download/v1.7.1/cni-plugins-linux-amd64-v1.7.1.tgz | sudo tar -C /opt/cni/bin -xz
+sudo ufw enable
