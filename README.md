@@ -7,17 +7,13 @@ sudo bash <(curl -fsSL https://get.docker.com)
 curl -fsSL https://get.docker.com | sudo bash
 ```
 
-containerd + k8s control plane cluster setup
+containerd + k8s control plane setup
 ```
-curl -fsSL https://raw.githubusercontent.com/r1zekami/the-stash/refs/heads/main/ctd-k8s.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/r1zekami/the-stash/refs/heads/main/ctd-k8s-cp.sh | sudo bash
 ```
-only k8s control plane cluster setup (depends on containerd)
+containerd + k8s worker node setup
 ```
-curl -fsSL https://raw.githubusercontent.com/r1zekami/the-stash/refs/heads/main/k8s-cp-setup.sh | sudo bash
-```
-only containerd setup
-```
-curl -fsSL https://raw.githubusercontent.com/r1zekami/the-stash/refs/heads/main/ctd-setup.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/r1zekami/the-stash/refs/heads/main/ctd-k8s-wrk.sh | sudo bash
 ```
 Flannel
 ```

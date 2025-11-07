@@ -1,6 +1,5 @@
 #!/bin/bash
 #containerd setup
-sudo apt-get update && sudo apt-get install curl
 swapoff -a
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
@@ -51,12 +50,15 @@ sudo ufw allow 10250/tcp        #kubelet
 sudo ufw allow 10255/tcp        #ro kubelet
 sudo ufw allow 30000:32767/tcp  #NodePort services
 sudo ufw allow 4789/udp         #VXLAN (Flannel)
-sudo ufw enable
+sudo ufw allow 22/tcp           #ssh
 
 sudo apt-get update
-sudo apt-get install -y kubelet
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
 
 sudo systemctl enable kubelet
 
 sudo mkdir -p /opt/cni/bin
 curl -L https://github.com/containernetworking/plugins/releases/download/v1.7.1/cni-plugins-linux-amd64-v1.7.1.tgz | sudo tar -C /opt/cni/bin -xz
+
+echo "Enable firewall: ufw enable"

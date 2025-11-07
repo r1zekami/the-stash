@@ -64,4 +64,4 @@ sudo systemctl enable kubelet
 
 sudo mkdir -p /opt/cni/bin
 curl -L https://github.com/containernetworking/plugins/releases/download/v1.7.1/cni-plugins-linux-amd64-v1.7.1.tgz | sudo tar -C /opt/cni/bin -xz
-sudo ufw enable
+echo "Enable firewall: ufw enable"
