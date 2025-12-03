@@ -13,7 +13,7 @@ from thehive4py.models import Alert, AlertArtifact
 # Global vars
 
 #threshold for wazuh rules level
-lvl_threshold=0
+lvl_threshold=7
 #threshold for suricata rules level
 suricata_lvl_threshold=3
 
